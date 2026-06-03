@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://be1kj78ea45vd"]
+
+[ext_resource type="Script" uid="uid://b84l4uqxmpjd5" path="res://StartScene/start_scene_manager.gd" id="1_1hog4"]
+[ext_resource type="FontFile" uid="uid://dyxok0fufmow3" path="res://Fonts/CascadiaMono.ttf" id="1_tmopt"]
+[ext_resource type="Script" uid="uid://cbha3qbu51hsx" path="res://StartScene/KeyButton.gd" id="3_p2kjk"]
+[ext_resource type="Script" uid="uid://cylfwjxkyrb1r" path="res://TextItems/TextMenu.gd" id="4_gba8m"]
+[ext_resource type="Script" uid="uid://daauspnibavlh" path="res://TextButtonBase/TextButtonBase.gd" id="5_40aag"]
+
+[sub_resource type="Animation" id="Animation_p2kjk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gba8m"]
+resource_name = "Start"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.233333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"flash_text"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible_characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5333333, 2.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1387, 1387, 2167]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -865)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_40aag"]
+_data = {
+&"RESET": SubResource("Animation_p2kjk"),
+&"Start": SubResource("Animation_gba8m")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_1hog4"]
+font = ExtResource("1_tmopt")
+
+[sub_resource type="LabelSettings" id="LabelSettings_p2kjk"]
+font = ExtResource("1_tmopt")
+font_color = Color(0, 0.5921569, 0, 1)
+
+[node name="StartScene" type="Control" unique_id=1205577616]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1hog4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=158804971]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=432163203]
+libraries/ = SubResource("AnimationLibrary_40aag")
+
+[node name="Label" type="Label" parent="." unique_id=1994369298]
+modulate = Color(0, 0.5921569, 0, 1)
+layout_mode = 0
+offset_right = 1116.0
+offset_bottom = 1405.0
+text = "██████╗  ██████╗ ██╗    ██╗███████╗██████╗ ██████╗ ██╗      ██████╗  ██████╗██╗  ██╗██████╗  ██████╗  ██████╗  ██████╗ 
+██╔══██╗██╔═══██╗██║    ██║██╔════╝██╔══██╗██╔══██╗██║     ██╔═══██╗██╔════╝██║ ██╔╝╚════██╗██╔═████╗██╔═████╗██╔═████╗
+██████╔╝██║   ██║██║ █╗ ██║█████╗  ██████╔╝██████╔╝██║     ██║   ██║██║     █████╔╝  █████╔╝██║██╔██║██║██╔██║██║██╔██║
+██╔═══╝ ██║   ██║██║███╗██║██╔══╝  ██╔══██╗██╔══██╗██║     ██║   ██║██║     ██╔═██╗ ██╔═══╝ ████╔╝██║████╔╝██║████╔╝██║
+██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║██████╔╝███████╗╚██████╔╝╚██████╗██║  ██╗███████╗╚██████╔╝╚██████╔╝╚██████╔╝
+╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ 
+██████╗ ██████╗ ███████╗███████╗███████╗███╗   ██╗████████╗███████╗                                                    
+██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝████╗  ██║╚══██╔══╝██╔════╝                                                    
+██████╔╝██████╔╝█████╗  ███████╗█████╗  ██╔██╗ ██║   ██║   ███████╗                                                    
+██╔═══╝ ██╔══██╗██╔══╝  ╚════██║██╔══╝  ██║╚██╗██║   ██║   ╚════██║                                                    
+██║     ██║  ██║███████╗███████║███████╗██║ ╚████║   ██║   ███████║                                                    
+╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ __  __                   __                         ____    ___             __      
+/\\ \\/\\ \\                 /\\ \\                       /\\  _`\\ /\\_ \\           /\\ \\__   
+\\ \\ \\_\\ \\     __      ___\\ \\ \\/'\\      __           \\ \\ \\L\\ \\//\\ \\      __  \\ \\ ,_\\  
+ \\ \\  _  \\  /'__`\\   /'___\\ \\ , <    /'__`\\   _______\\ \\ ,__/ \\ \\ \\   /'__`\\ \\ \\ \\/  
+  \\ \\ \\ \\ \\/\\ \\L\\.\\_/\\ \\__/\\ \\ \\\\`\\ /\\ \\L\\.\\_/\\______\\\\ \\ \\/   \\_\\ \\_/\\ \\L\\.\\_\\ \\ \\_ 
+   \\ \\_\\ \\_\\ \\__/.\\_\\ \\____\\\\ \\_\\ \\_\\ \\__/.\\_\\/______/ \\ \\_\\   /\\____\\ \\__/.\\_\\\\ \\__\\
+    \\/_/\\/_/\\/__/\\/_/\\/____/ \\/_/\\/_/\\/__/\\/_/          \\/_/   \\/____/\\/__/\\/_/ \\/__/
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+label_settings = SubResource("LabelSettings_1hog4")
+script = ExtResource("5_40aag")
+metadata/_custom_type_script = "uid://daauspnibavlh"
+
+[node name="Play" type="Label" parent="." unique_id=691112329]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 51.0
+offset_top = -11.0
+offset_right = 361.0
+offset_bottom = 12.0
+grow_vertical = 2
+text = "> Click any button to continue..."
+label_settings = SubResource("LabelSettings_p2kjk")
+script = ExtResource("3_p2kjk")
+text_for_button = "Click any button to continue..."
+metadata/_custom_type_script = "uid://cbha3qbu51hsx"
+
+[node name="MainMenu" type="Label" parent="." unique_id=633011164]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 51.0
+offset_top = -31.0
+offset_right = 155.0
+offset_bottom = 32.0
+grow_vertical = 2
+text = "Play
+() Settings
+() Exit"
+label_settings = SubResource("LabelSettings_p2kjk")
+script = ExtResource("4_gba8m")
+items_in_menu = Array[String](["Play", "Settings", "Exit"])
+metadata/_custom_type_script = "uid://cylfwjxkyrb1r"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="item_selected" from="MainMenu" to="." method="_on_main_menu_item_selected"]

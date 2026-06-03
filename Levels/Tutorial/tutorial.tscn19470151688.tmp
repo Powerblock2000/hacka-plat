@@ -1,0 +1,212 @@
+[gd_scene format=4 uid="uid://e5w6brx0x8xd"]
+
+[ext_resource type="Script" uid="uid://ftiucprs3jcl" path="res://Levels/Tutorial/tutorial.gd" id="1_bnpab"]
+[ext_resource type="PackedScene" uid="uid://dmpybtqjdfi1g" path="res://Player/Player.tscn" id="2_pwftx"]
+[ext_resource type="Texture2D" uid="uid://w0g8bdr85a4w" path="res://Textures/Worldv3.png" id="3_avjma"]
+[ext_resource type="Script" uid="uid://biumwfjc5tmdn" path="res://MovablePlatform/moveable_platform.gd" id="4_rvvu0"]
+[ext_resource type="Texture2D" uid="uid://dpohmsb7gnnn2" path="res://Textures/Block.png" id="5_3jn0v"]
+[ext_resource type="FontFile" uid="uid://dyxok0fufmow3" path="res://Fonts/CascadiaMono.ttf" id="6_yd0l0"]
+[ext_resource type="Script" uid="uid://daauspnibavlh" path="res://TextButtonBase/TextButtonBase.gd" id="7_bnpab"]
+[ext_resource type="Script" uid="uid://cbha3qbu51hsx" path="res://StartScene/KeyButton.gd" id="8_bnpab"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pwftx"]
+texture = ExtResource("3_avjma")
+separation = Vector2i(1, 0)
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+13:0/0 = 0
+13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+14:0/0 = 0
+14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+15:0/0 = 0
+15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_yd0l0"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_pwftx")
+
+[sub_resource type="Environment" id="Environment_3jn0v"]
+background_mode = 3
+tonemap_mode = 3
+glow_enabled = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yd0l0"]
+size = Vector2(50, 20)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f2vae"]
+font = ExtResource("6_yd0l0")
+font_size = 28
+font_color = Color(0, 0.5921569, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2pfiq"]
+font = ExtResource("6_yd0l0")
+font_color = Color(0, 0.5921569, 0, 1)
+
+[node name="Tutorial" type="Node2D" unique_id=505907279 node_paths=PackedStringArray("dialog")]
+script = ExtResource("1_bnpab")
+dialog = NodePath("CanvasLayer2/MarginContainer/Control/Dialog")
+metadata/_custom_type_script = "uid://ciaupfkwwy37h"
+
+[node name="CharacterBody2D" parent="." unique_id=57612185 instance=ExtResource("2_pwftx")]
+position = Vector2(3, -52)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=628177852]
+tile_map_data = PackedByteArray("AAD//wAAAQALAAAAAAAAAAAAAQALAAAAAAAHAAAAAQACAAAAAAD6/wAAAQABAAAAAAD7/wAAAQALAAAAAAD8/wAAAQALAAAAAAD9/wAAAQALAAAAAAD+/wAAAQALAAAAAAABAAAAAQALAAAAAAACAAAAAQALAAAAAAADAAAAAQALAAAAAAAEAAAAAQALAAAAAAAFAAAAAQALAAAAAAAGAAAAAQALAAAAAAD6/wEAAQAHAAAAAAD6/wIAAQAHAAAAAAD6/wMAAQAHAAAAAAAHAAEAAQAIAAAAAAAHAAIAAQAIAAAAAAAHAAMAAQAIAAAAAAD7/wEAAQAFAAAAAAD7/wIAAQAFAAAAAAD7/wMAAQAFAAAAAAD8/wIAAQAFAAAAAAD8/wEAAQAFAAAAAAD8/wMAAQAFAAAAAAD9/wMAAQAFAAAAAAD9/wIAAQAFAAAAAAD9/wEAAQAFAAAAAAD+/wIAAQAFAAAAAAD+/wMAAQAFAAAAAAD//wIAAQAFAAAAAAD//wEAAQAFAAAAAAD+/wEAAQAFAAAAAAD//wMAAQAFAAAAAAAAAAMAAQAFAAAAAAAAAAIAAQAFAAAAAAAAAAEAAQAFAAAAAAABAAIAAQAFAAAAAAABAAEAAQAFAAAAAAACAAEAAQAFAAAAAAABAAMAAQAFAAAAAAACAAMAAQAFAAAAAAACAAIAAQAFAAAAAAADAAIAAQAFAAAAAAADAAEAAQAFAAAAAAADAAMAAQAFAAAAAAAEAAMAAQAFAAAAAAAEAAIAAQAFAAAAAAAEAAEAAQAFAAAAAAAFAAIAAQAFAAAAAAAFAAMAAQAFAAAAAAAGAAIAAQAFAAAAAAAGAAEAAQAFAAAAAAAFAAEAAQAFAAAAAAAGAAMAAQAFAAAAAAD6/wQAAQAEAAAAAAAHAAQAAQADAAAAAAD7/wQAAQAKAAAAAAD8/wQAAQAKAAAAAAD9/wQAAQAKAAAAAAD+/wQAAQAKAAAAAAD//wQAAQAKAAAAAAAAAAQAAQAKAAAAAAABAAQAAQAKAAAAAAACAAQAAQAKAAAAAAADAAQAAQAKAAAAAAAEAAQAAQAKAAAAAAAFAAQAAQAKAAAAAAAGAAQAAQAKAAAAAAACAPv/AQABAAAAAAADAPv/AQALAAAAAAAEAPv/AQALAAAAAAAFAPv/AQACAAAAAAACAPz/AQAHAAAAAAACAP3/AQAEAAAAAAADAP3/AQAKAAAAAAAEAP3/AQAKAAAAAAAFAP3/AQADAAAAAAAFAPz/AQAIAAAAAAADAPz/AQAFAAAAAAAEAPz/AQAFAAAAAAA=")
+tile_set = SubResource("TileSet_yd0l0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1193146747]
+environment = SubResource("Environment_3jn0v")
+
+[node name="MovablePlatform" type="StaticBody2D" parent="." unique_id=667907224]
+position = Vector2(-106, -34)
+script = ExtResource("4_rvvu0")
+metadata/_custom_type_script = "uid://biumwfjc5tmdn"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MovablePlatform" unique_id=1755463958]
+offset_left = -25.0
+offset_top = -10.0
+offset_right = 25.0
+offset_bottom = 10.0
+texture = ExtResource("5_3jn0v")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovablePlatform" unique_id=1155917393]
+shape = SubResource("RectangleShape2D_yd0l0")
+
+[node name="Area2D" type="Area2D" parent="MovablePlatform" unique_id=819627805]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MovablePlatform/Area2D" unique_id=604731573]
+shape = SubResource("RectangleShape2D_yd0l0")
+
+[node name="MovablePlatform3" type="StaticBody2D" parent="." unique_id=1992164605]
+position = Vector2(-55, -34)
+script = ExtResource("4_rvvu0")
+metadata/_custom_type_script = "uid://biumwfjc5tmdn"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MovablePlatform3" unique_id=2013842556]
+offset_left = -25.0
+offset_top = -10.0
+offset_right = 25.0
+offset_bottom = 10.0
+texture = ExtResource("5_3jn0v")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovablePlatform3" unique_id=1222443654]
+shape = SubResource("RectangleShape2D_yd0l0")
+
+[node name="Area2D" type="Area2D" parent="MovablePlatform3" unique_id=369962738]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MovablePlatform3/Area2D" unique_id=648269554]
+shape = SubResource("RectangleShape2D_yd0l0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1986844121]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=171212665]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=988492545]
+layer = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2" unique_id=1667682793]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Control" type="Control" parent="CanvasLayer2/MarginContainer" unique_id=1327864314]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/MarginContainer/Control" unique_id=409139445]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -27.0
+offset_right = 50.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/MarginContainer/Control/ColorRect" unique_id=1905858097]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 30.0
+grow_horizontal = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="TextButtonbase" type="Label" parent="CanvasLayer2/MarginContainer/Control/ColorRect/HBoxContainer" unique_id=1794830618]
+visible = false
+layout_mode = 2
+text = "[E] Edit mode"
+label_settings = SubResource("LabelSettings_f2vae")
+script = ExtResource("7_bnpab")
+metadata/_custom_type_script = "uid://daauspnibavlh"
+
+[node name="Dialog" type="Label" parent="CanvasLayer2/MarginContainer/Control" unique_id=344323536]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "> "
+label_settings = SubResource("LabelSettings_2pfiq")
+script = ExtResource("8_bnpab")
+use_underscore = false
+metadata/_custom_type_script = "uid://cbha3qbu51hsx"

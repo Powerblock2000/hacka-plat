@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dkc60nw8rw8e1"]
+
+[ext_resource type="FontFile" uid="uid://dyxok0fufmow3" path="res://Fonts/CascadiaMono.ttf" id="1_4qv2h"]
+[ext_resource type="Script" uid="uid://djgow8iiq4v72" path="res://LoadingManager/loadingScene.gd" id="1_sjhbc"]
+[ext_resource type="Script" uid="uid://734hfrnu7n2m" path="res://LoadingManager/LoadingSpinner.gd" id="1_up5q1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sjhbc"]
+font = ExtResource("1_4qv2h")
+font_color = Color(0, 0.5921569, 0, 1)
+
+[node name="Loading" type="CanvasLayer" unique_id=233400989]
+layer = 2
+script = ExtResource("1_sjhbc")
+
+[node name="Control" type="Control" parent="." unique_id=932843742]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1011814790]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1029589107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Control" type="Control" parent="Control/MarginContainer" unique_id=1073551638]
+layout_mode = 2
+
+[node name="LoadingSpinner" type="Label" parent="Control/MarginContainer/Control" unique_id=1596934273]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -11.5
+offset_right = 56.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "⠧ Loading..."
+label_settings = SubResource("LabelSettings_sjhbc")
+visible_characters = 12
+script = ExtResource("1_up5q1")
+metadata/_custom_type_script = "uid://734hfrnu7n2m"

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dbg4aiob388er"]
+
+[ext_resource type="Script" uid="uid://ciaupfkwwy37h" path="res://WorldManager/WorldManager.gd" id="1_kj3p2"]
+[ext_resource type="PackedScene" uid="uid://dmpybtqjdfi1g" path="res://Player/Player.tscn" id="1_qrja6"]
+[ext_resource type="Script" uid="uid://biumwfjc5tmdn" path="res://MovablePlatform/moveable_platform.gd" id="2_co24e"]
+[ext_resource type="Texture2D" uid="uid://o6n25fqe8oxt" path="res://icon.svg" id="3_feb8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fusf7"]
+size = Vector2(1587, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co24e"]
+size = Vector2(145, 60)
+
+[node name="Testing" type="Node2D" unique_id=1575352461]
+script = ExtResource("1_kj3p2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1729993756]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=39064154]
+position = Vector2(215.5, 20)
+shape = SubResource("RectangleShape2D_fusf7")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1378077176]
+offset_left = -562.0
+offset_right = 989.0
+offset_bottom = 40.0
+
+[node name="CharacterBody2D" parent="." unique_id=57612185 instance=ExtResource("1_qrja6")]
+position = Vector2(0, -77)
+
+[node name="MovablePlatform" type="StaticBody2D" parent="." unique_id=1055801143]
+position = Vector2(184, -163)
+input_pickable = true
+script = ExtResource("2_co24e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovablePlatform" unique_id=921715997]
+shape = SubResource("RectangleShape2D_co24e")
+
+[node name="Sprite2D" type="Sprite2D" parent="MovablePlatform" unique_id=619512337]
+position = Vector2(-3.8146973e-06, 1.9073486e-06)
+scale = Vector2(1.140625, 0.46875003)
+texture = ExtResource("3_feb8i")
+
+[node name="Area2D" type="Area2D" parent="MovablePlatform" unique_id=443225501]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovablePlatform/Area2D" unique_id=1422604923]
+shape = SubResource("RectangleShape2D_co24e")
