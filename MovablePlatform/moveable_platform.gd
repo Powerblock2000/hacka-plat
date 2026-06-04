@@ -10,6 +10,7 @@ var being_dragged : bool = false
 var area_2d : Area2D
 
 var ready_to_set : bool = true
+var original_position : Vector2
 
 func get_area_2d() -> Area2D:
 	for child in get_children():
@@ -30,10 +31,14 @@ func _ready() -> void:
 	
 	area_2d.body_entered.connect(body_entered)
 	area_2d.body_exited.connect(body_exited)
+	original_position = global_position
 
 func body_entered(body: Node2D) -> void:
 	if body is Player:
 		ready_to_set = false
+
+func reset_position() -> void:
+	global_position = original_position
 
 func body_exited(body: Node2D) -> void:
 	if body is Player:

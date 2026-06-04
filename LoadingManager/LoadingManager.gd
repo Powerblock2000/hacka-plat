@@ -28,7 +28,8 @@ func change_scene(scene_path: String) -> void:
 	print("Waiting for scene")
 	await loaded_scene
 	print("Scene loaded recieved")
-	get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(scene_path))
 	await get_tree().create_timer(3).timeout
 	await loading_screen.wipe()
 	loading_screen.queue_free()
+	get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(scene_path))
+	return

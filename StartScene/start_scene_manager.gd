@@ -8,6 +8,7 @@ extends Control
 var await_key_press : bool = false
 
 func _ready() -> void:
+	#await get_tree().create_timer(10).timeout
 	animation_player.play("Start")
 
 func flash_text() -> void:

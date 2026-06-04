@@ -87,13 +87,18 @@ func _physics_process(delta: float) -> void: ## TODO Make dash work on y axis
 	
 	move_and_slide()
 
+var dash_timer_started : bool = false
+
 func _on_dash_timer_timeout() -> void:
 	dash_frame_one = true
 	can_dash = true
+	dash_timer_started = false
 
 func _on_timer_timeout() -> void:
 	print('Stop Dashin')
 	timer.stop()
 	dashing = false
 	can_dash = false
+	if dash_timer_started: return
+	dash_timer_started = true
 	dash_timer.start()

@@ -8,6 +8,10 @@
 [ext_resource type="FontFile" uid="uid://dyxok0fufmow3" path="res://Fonts/CascadiaMono.ttf" id="6_yd0l0"]
 [ext_resource type="Script" uid="uid://daauspnibavlh" path="res://TextButtonBase/TextButtonBase.gd" id="7_bnpab"]
 [ext_resource type="Script" uid="uid://cbha3qbu51hsx" path="res://StartScene/KeyButton.gd" id="8_bnpab"]
+[ext_resource type="Script" uid="uid://bus65ckjxbpou" path="res://Menus/edits_remaining.gd" id="8_f2vae"]
+[ext_resource type="Script" uid="uid://cwbuabf6nscen" path="res://Menus/sprint.gd" id="9_2pfiq"]
+[ext_resource type="Texture2D" uid="uid://b5y0nvng4hbpx" path="res://Textures/Flag1.png" id="11_100ei"]
+[ext_resource type="Script" uid="uid://dl2p482e0fm15" path="res://Levels/flag.gd" id="11_loe7i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pwftx"]
 texture = ExtResource("3_avjma")
@@ -61,16 +65,23 @@ size = Vector2(50, 20)
 
 [sub_resource type="LabelSettings" id="LabelSettings_f2vae"]
 font = ExtResource("6_yd0l0")
-font_size = 28
+font_size = 14
 font_color = Color(0, 0.5921569, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_2pfiq"]
 font = ExtResource("6_yd0l0")
 font_color = Color(0, 0.5921569, 0, 1)
 
-[node name="Tutorial" type="Node2D" unique_id=505907279 node_paths=PackedStringArray("dialog")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orm1n"]
+size = Vector2(22, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a8jk"]
+size = Vector2(5000, 10)
+
+[node name="Tutorial" type="Node2D" unique_id=505907279 node_paths=PackedStringArray("dialog", "flag")]
 script = ExtResource("1_bnpab")
 dialog = NodePath("CanvasLayer2/MarginContainer/Control/Dialog")
+flag = NodePath("Flag")
 metadata/_custom_type_script = "uid://ciaupfkwwy37h"
 
 [node name="CharacterBody2D" parent="." unique_id=57612185 instance=ExtResource("2_pwftx")]
@@ -150,7 +161,6 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=988492545]
-layer = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2" unique_id=1667682793]
 anchors_preset = 15
@@ -192,12 +202,38 @@ grow_horizontal = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="TextButtonbase" type="Label" parent="CanvasLayer2/MarginContainer/Control/ColorRect/HBoxContainer" unique_id=1794830618]
+[node name="Edit" type="Label" parent="CanvasLayer2/MarginContainer/Control/ColorRect/HBoxContainer" unique_id=1794830618]
 visible = false
 layout_mode = 2
-text = "[E] Edit mode"
+text = "[E] Edit mode |"
 label_settings = SubResource("LabelSettings_f2vae")
 script = ExtResource("7_bnpab")
+metadata/_custom_type_script = "uid://daauspnibavlh"
+
+[node name="Reset" type="Label" parent="CanvasLayer2/MarginContainer/Control/ColorRect/HBoxContainer" unique_id=710740383]
+visible = false
+layout_mode = 2
+text = "[R] Reset |"
+label_settings = SubResource("LabelSettings_f2vae")
+script = ExtResource("7_bnpab")
+metadata/_custom_type_script = "uid://daauspnibavlh"
+
+[node name="EditsRemaining" type="Label" parent="CanvasLayer2/MarginContainer/Control/ColorRect/HBoxContainer" unique_id=2038715472 node_paths=PackedStringArray("world_manager")]
+visible = false
+layout_mode = 2
+text = " Edits left |"
+label_settings = SubResource("LabelSettings_f2vae")
+script = ExtResource("8_f2vae")
+world_manager = NodePath("../../../../../..")
+metadata/_custom_type_script = "uid://daauspnibavlh"
+
+[node name="Sprint" type="Label" parent="CanvasLayer2/MarginContainer/Control/ColorRect/HBoxContainer" unique_id=502930956 node_paths=PackedStringArray("player")]
+visible = false
+layout_mode = 2
+text = "[Shift] Dash | Time left to Dash: "
+label_settings = SubResource("LabelSettings_f2vae")
+script = ExtResource("9_2pfiq")
+player = NodePath("../../../../../../CharacterBody2D")
 metadata/_custom_type_script = "uid://daauspnibavlh"
 
 [node name="Dialog" type="Label" parent="CanvasLayer2/MarginContainer/Control" unique_id=344323536]
@@ -210,3 +246,24 @@ label_settings = SubResource("LabelSettings_2pfiq")
 script = ExtResource("8_bnpab")
 use_underscore = false
 metadata/_custom_type_script = "uid://cbha3qbu51hsx"
+
+[node name="Flag" type="Area2D" parent="." unique_id=2072196394]
+position = Vector2(126, -176)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("11_loe7i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flag" unique_id=1311876889]
+texture = ExtResource("11_100ei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag" unique_id=1632337010]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_orm1n")
+
+[node name="DeathZone" type="Area2D" parent="." unique_id=421872937]
+position = Vector2(0, 94)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=1464696853]
+shape = SubResource("RectangleShape2D_0a8jk")
