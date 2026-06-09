@@ -33,7 +33,7 @@ func _on_main_menu_item_selected(index: Variant) -> void:
 		print("Play!")
 		await main_menu.wipe()
 		await label.wipe()
-		LoadingManager.change_scene("res://Levels/Tutorial/tutorial.tscn")
+		LoadingManager.change_scene("res://Menus/level_select.tscn")
 	if index == 2:
 		await main_menu.wipe()
 		get_tree().quit(0)

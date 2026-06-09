@@ -1,17 +1,19 @@
 [gd_scene format=4 uid="uid://e5w6brx0x8xd"]
 
-[ext_resource type="Script" uid="uid://ftiucprs3jcl" path="res://Levels/Tutorial/tutorial.gd" id="1_bnpab"]
+[ext_resource type="Script" uid="uid://ftiucprs3jcl" path="res://Levels/1/tutorial.gd" id="1_bnpab"]
 [ext_resource type="PackedScene" uid="uid://dmpybtqjdfi1g" path="res://Player/Player.tscn" id="2_pwftx"]
 [ext_resource type="Texture2D" uid="uid://w0g8bdr85a4w" path="res://Textures/Worldv3.png" id="3_avjma"]
 [ext_resource type="Script" uid="uid://biumwfjc5tmdn" path="res://MovablePlatform/moveable_platform.gd" id="4_rvvu0"]
 [ext_resource type="Texture2D" uid="uid://dpohmsb7gnnn2" path="res://Textures/Block.png" id="5_3jn0v"]
 [ext_resource type="FontFile" uid="uid://dyxok0fufmow3" path="res://Fonts/CascadiaMono.ttf" id="6_yd0l0"]
 [ext_resource type="Script" uid="uid://daauspnibavlh" path="res://TextButtonBase/TextButtonBase.gd" id="7_bnpab"]
+[ext_resource type="Script" uid="uid://dm6gube0p2n82" path="res://Levels/1/edit.gd" id="7_pmuq6"]
 [ext_resource type="Script" uid="uid://cbha3qbu51hsx" path="res://StartScene/KeyButton.gd" id="8_bnpab"]
 [ext_resource type="Script" uid="uid://bus65ckjxbpou" path="res://Menus/edits_remaining.gd" id="8_f2vae"]
 [ext_resource type="Script" uid="uid://cwbuabf6nscen" path="res://Menus/sprint.gd" id="9_2pfiq"]
 [ext_resource type="Texture2D" uid="uid://b5y0nvng4hbpx" path="res://Textures/Flag1.png" id="11_100ei"]
 [ext_resource type="Script" uid="uid://dl2p482e0fm15" path="res://Levels/flag.gd" id="11_loe7i"]
+[ext_resource type="Script" uid="uid://1b21ebbordbf" path="res://Levels/death_zone.gd" id="13_swd6b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pwftx"]
 texture = ExtResource("3_avjma")
@@ -60,6 +62,12 @@ background_mode = 3
 tonemap_mode = 3
 glow_enabled = true
 
+[sub_resource type="Gradient" id="Gradient_swd6b"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_orm1n"]
+gradient = SubResource("Gradient_swd6b")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yd0l0"]
 size = Vector2(50, 20)
 
@@ -78,10 +86,13 @@ size = Vector2(22, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0a8jk"]
 size = Vector2(5000, 10)
 
-[node name="Tutorial" type="Node2D" unique_id=505907279 node_paths=PackedStringArray("dialog", "flag")]
+[node name="Tutorial" type="Node2D" unique_id=505907279 node_paths=PackedStringArray("dialog", "flag", "death_zone")]
 script = ExtResource("1_bnpab")
+moves_avalible = 10
 dialog = NodePath("CanvasLayer2/MarginContainer/Control/Dialog")
 flag = NodePath("Flag")
+death_zone = NodePath("DeathZone")
+next_scene_path = "res://Menus/level_select.tscn"
 metadata/_custom_type_script = "uid://ciaupfkwwy37h"
 
 [node name="CharacterBody2D" parent="." unique_id=57612185 instance=ExtResource("2_pwftx")]
@@ -98,6 +109,12 @@ environment = SubResource("Environment_3jn0v")
 position = Vector2(-106, -34)
 script = ExtResource("4_rvvu0")
 metadata/_custom_type_script = "uid://biumwfjc5tmdn"
+
+[node name="Outline" type="Sprite2D" parent="MovablePlatform" unique_id=806779719]
+visible = false
+position = Vector2(-0.49999928, -0.5)
+scale = Vector2(0.796875, 0.32812497)
+texture = SubResource("GradientTexture2D_orm1n")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MovablePlatform" unique_id=1755463958]
 offset_left = -25.0
@@ -125,6 +142,12 @@ shape = SubResource("RectangleShape2D_yd0l0")
 position = Vector2(-55, -34)
 script = ExtResource("4_rvvu0")
 metadata/_custom_type_script = "uid://biumwfjc5tmdn"
+
+[node name="Outline" type="Sprite2D" parent="MovablePlatform3" unique_id=1983318318]
+visible = false
+position = Vector2(-0.5, -0.5)
+scale = Vector2(0.796875, 0.32812497)
+texture = SubResource("GradientTexture2D_orm1n")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MovablePlatform3" unique_id=2013842556]
 offset_left = -25.0
@@ -202,12 +225,13 @@ grow_horizontal = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="Edit" type="Label" parent="CanvasLayer2/MarginContainer/Control/ColorRect/HBoxContainer" unique_id=1794830618]
+[node name="Edit" type="Label" parent="CanvasLayer2/MarginContainer/Control/ColorRect/HBoxContainer" unique_id=1794830618 node_paths=PackedStringArray("world_manager")]
 visible = false
 layout_mode = 2
-text = "[E] Edit mode |"
+text = "[E] Edit mode [OFF] |"
 label_settings = SubResource("LabelSettings_f2vae")
-script = ExtResource("7_bnpab")
+script = ExtResource("7_pmuq6")
+world_manager = NodePath("../../../../../..")
 metadata/_custom_type_script = "uid://daauspnibavlh"
 
 [node name="Reset" type="Label" parent="CanvasLayer2/MarginContainer/Control/ColorRect/HBoxContainer" unique_id=710740383]
@@ -264,6 +288,7 @@ shape = SubResource("RectangleShape2D_orm1n")
 position = Vector2(0, 94)
 collision_layer = 4
 collision_mask = 4
+script = ExtResource("13_swd6b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=1464696853]
 shape = SubResource("RectangleShape2D_0a8jk")

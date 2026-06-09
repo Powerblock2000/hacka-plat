@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c7tpkf17k2ggu"]
+
+[ext_resource type="Script" uid="uid://beqm68m7tyigb" path="res://Menus/level_select.gd" id="1_cbjk5"]
+[ext_resource type="Script" uid="uid://cylfwjxkyrb1r" path="res://TextItems/TextMenu.gd" id="2_b6uew"]
+[ext_resource type="FontFile" uid="uid://dyxok0fufmow3" path="res://Fonts/CascadiaMono.ttf" id="2_rd7hm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ids4p"]
+font = ExtResource("2_rd7hm")
+
+[node name="LevelSelect" type="Control" unique_id=951279458]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cbjk5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=324103997]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Levels" type="Label" parent="." unique_id=1290931954]
+visible = false
+modulate = Color(0, 0.5921569, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_ids4p")
+script = ExtResource("2_b6uew")
+metadata/_custom_type_script = "uid://cylfwjxkyrb1r"
+
+[connection signal="item_selected" from="Levels" to="." method="_on_levels_item_selected"]

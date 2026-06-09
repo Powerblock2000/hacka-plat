@@ -19,9 +19,11 @@ config/icon="res://icon.svg"
 
 LoadingManager="*uid://73qjtn65tvbc"
 EffectsManager="*uid://bykgb0nboa0j2"
+LevelManager="*uid://dnwjjdpxpspn7"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 

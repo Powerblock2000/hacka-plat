@@ -218,5 +218,15 @@ script = ExtResource("4_gba8m")
 items_in_menu = Array[String](["Play", "Settings", "Exit"])
 metadata/_custom_type_script = "uid://cylfwjxkyrb1r"
 
+[node name="Label" type="Label" parent="MainMenu" unique_id=776965790]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 69.0
+offset_right = 151.0
+offset_bottom = 92.0
+rotation = -0.13669793
+text = "> Use Arrow keys"
+label_settings = SubResource("LabelSettings_p2kjk")
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="item_selected" from="MainMenu" to="." method="_on_main_menu_item_selected"]

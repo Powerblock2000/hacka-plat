@@ -11,6 +11,7 @@ var area_2d : Area2D
 
 var ready_to_set : bool = true
 var original_position : Vector2
+var outline : Node2D
 
 func get_area_2d() -> Area2D:
 	for child in get_children():
@@ -32,6 +33,10 @@ func _ready() -> void:
 	area_2d.body_entered.connect(body_entered)
 	area_2d.body_exited.connect(body_exited)
 	original_position = global_position
+	
+	for child in get_children():
+		if child.name == "Outline":
+			outline = child
 
 func body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -46,6 +51,11 @@ func body_exited(body: Node2D) -> void:
 
 var old_pos : Vector2
 func _process(_delta: float) -> void:
+	if (get_parent() as WorldManager).can_edit and outline:
+		outline.show()
+	elif outline:
+		outline.hide()
+	
 	being_dragged = false
 	if Input.is_action_pressed("Click") and mouse_inside and (get_parent() as WorldManager).can_edit:
 		being_dragged = true
