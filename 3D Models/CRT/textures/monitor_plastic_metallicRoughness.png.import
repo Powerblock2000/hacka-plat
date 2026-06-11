@@ -3,16 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b88bqm1f5ujqp"
-path.s3tc="res://.godot/imported/monitor_plastic_metallicRoughness.png-bd1291fd8a291682d1c3c31fbae9053d.s3tc.ctex"
-metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
+valid=false
 
 [deps]
 
 source_file="res://3D Models/CRT/textures/monitor_plastic_metallicRoughness.png"
-dest_files=["res://.godot/imported/monitor_plastic_metallicRoughness.png-bd1291fd8a291682d1c3c31fbae9053d.s3tc.ctex"]
 
 [params]
 

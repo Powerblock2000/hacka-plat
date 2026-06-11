@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://deuvyho8vt2ec"
-path="res://.godot/imported/whitePuff16.png-5c535181b732983f839d44978cb3141a.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://White puff/whitePuff16.png"
-dest_files=["res://.godot/imported/whitePuff16.png-5c535181b732983f839d44978cb3141a.ctex"]
 
 [params]
 

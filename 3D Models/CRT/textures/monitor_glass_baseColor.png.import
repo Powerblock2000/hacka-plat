@@ -3,16 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdti7nj3exykc"
-path.s3tc="res://.godot/imported/monitor_glass_baseColor.png-7f4cf00f80866f9fa0cabc5d878372e3.s3tc.ctex"
-metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
+valid=false
 
 [deps]
 
 source_file="res://3D Models/CRT/textures/monitor_glass_baseColor.png"
-dest_files=["res://.godot/imported/monitor_glass_baseColor.png-7f4cf00f80866f9fa0cabc5d878372e3.s3tc.ctex"]
 
 [params]
 

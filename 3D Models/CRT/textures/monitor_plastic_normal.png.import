@@ -3,16 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://han7bdke5tad"
-path.s3tc="res://.godot/imported/monitor_plastic_normal.png-a46a35ffc5ec0cebae8ae9fbb8ffacd9.s3tc.ctex"
-metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
+valid=false
 
 [deps]
 
 source_file="res://3D Models/CRT/textures/monitor_plastic_normal.png"
-dest_files=["res://.godot/imported/monitor_plastic_normal.png-a46a35ffc5ec0cebae8ae9fbb8ffacd9.s3tc.ctex"]
 
 [params]
 

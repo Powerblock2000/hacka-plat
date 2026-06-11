@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://shefpleqonm3"
-path="res://.godot/imported/logo-256.png-31d72dd07212da253bceb5242e780be9.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://addons/PolyHavenImport/logo-256.png"
-dest_files=["res://.godot/imported/logo-256.png-31d72dd07212da253bceb5242e780be9.ctex"]
 
 [params]
 
