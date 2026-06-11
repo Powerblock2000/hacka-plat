@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cbha3qbu51hsx" path="res://StartScene/KeyButton.gd" id="3_p2kjk"]
 [ext_resource type="Script" uid="uid://cylfwjxkyrb1r" path="res://TextItems/TextMenu.gd" id="4_gba8m"]
 [ext_resource type="Script" uid="uid://daauspnibavlh" path="res://TextButtonBase/TextButtonBase.gd" id="5_40aag"]
+[ext_resource type="AudioStream" uid="uid://ci83skh33n0d2" path="res://Audio/moodmode-a-video-game-248444.mp3" id="6_oo8bx"]
 
 [sub_resource type="Animation" id="Animation_p2kjk"]
 length = 0.001
@@ -227,6 +228,11 @@ offset_bottom = 92.0
 rotation = -0.13669793
 text = "> Use Arrow keys"
 label_settings = SubResource("LabelSettings_p2kjk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1414003049]
+stream = ExtResource("6_oo8bx")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="item_selected" from="MainMenu" to="." method="_on_main_menu_item_selected"]

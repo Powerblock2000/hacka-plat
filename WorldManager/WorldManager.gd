@@ -28,6 +28,8 @@ var in_safe_zone : bool = false
 
 @onready var max_moves_avalible : int = moves_avalible
 
+var music : AudioStreamPlayer
+
 func say_dialog(text_to_say: String) -> void:
 	say_dialog_defered.call_deferred(text_to_say)
 	await _finished_dialog
@@ -51,6 +53,13 @@ func start() -> void:
 	print("Player: %s" % player)
 	flag.body_entered.connect(win_level)
 	death_zone.body_entered.connect(death)
+	
+	var audio : AudioStreamPlayer = AudioStreamPlayer.new()
+	add_child(audio)
+	audio.stream = AudioStreamMP3.load_from_file("res://Audio/melodyayresgriffiths-rasputin-russia-tetris-game-cossack-puzzle-soundtrack-mystery-148250.mp3")
+	audio.volume_db = -15
+	audio.playing = true
+	music = audio
 
 func death(body) -> void:
 	if body is Player:
@@ -64,6 +73,15 @@ func win_level(_body) -> void:
 
 func win_level_deffered() -> void:
 	LevelManager.finish_level(level_index)
+	
+	music.queue_free()
+	
+	var audio_win : AudioStreamPlayer = AudioStreamPlayer.new()
+	add_child(audio_win)
+	audio_win.stream = AudioStreamMP3.load_from_file("res://Audio/eaglaxle-gaming-victory-464016.mp3")
+	audio_win.playing = true
+	can_move = false
+	await get_tree().create_timer(2).timeout
 	
 	process_mode = Node.PROCESS_MODE_DISABLED
 	await get_tree().create_timer(1).timeout

@@ -132,7 +132,7 @@ level_index = 3
 metadata/_custom_type_script = "uid://ciaupfkwwy37h"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=900122709]
-tile_map_data = PackedByteArray("AAD//wAAAQALAAAAAAAAAAAAAQALAAAAAAAHAAAAAQACAAAAAAD6/wAAAQABAAAAAAD7/wAAAQALAAAAAAD+/wAAAQALAAAAAAABAAAAAQALAAAAAAACAAAAAQALAAAAAAADAAAAAQALAAAAAAAEAAAAAQALAAAAAAAFAAAAAQALAAAAAAAGAAAAAQALAAAAAAD6/wIAAQAHAAAAAAD6/wMAAQAHAAAAAAAHAAEAAQAIAAAAAAAHAAIAAQAIAAAAAAAHAAMAAQAIAAAAAAD7/wIAAQAFAAAAAAD7/wMAAQAFAAAAAAD8/wIAAQAFAAAAAAD8/wMAAQAFAAAAAAD9/wMAAQAFAAAAAAD+/wMAAQAFAAAAAAD//wIAAQAFAAAAAAAAAAIAAQAFAAAAAAACAAMAAQAFAAAAAAADAAMAAQAFAAAAAAAEAAMAAQAFAAAAAAAEAAIAAQAFAAAAAAAEAAEAAQAFAAAAAAAFAAIAAQAFAAAAAAAFAAMAAQAFAAAAAAAGAAIAAQAFAAAAAAAGAAEAAQAFAAAAAAAFAAEAAQAFAAAAAAAGAAMAAQAFAAAAAAD6/wQAAQAEAAAAAAAHAAQAAQADAAAAAAD7/wQAAQAKAAAAAAD8/wQAAQAKAAAAAAD9/wQAAQAKAAAAAAD+/wQAAQAKAAAAAAD//wQAAQAKAAAAAAAAAAQAAQAKAAAAAAABAAQAAQAKAAAAAAACAAQAAQAKAAAAAAADAAQAAQAKAAAAAAAEAAQAAQAKAAAAAAAFAAQAAQAKAAAAAAAGAAQAAQAKAAAAAAD8/wAAAQALAAAAAAD9/wAAAQALAAAAAAD9/wEAAQAFAAAAAAD9/wIAAQAFAAAAAAD+/wIAAQAFAAAAAAD//wMAAQAFAAAAAAAAAAMAAQAFAAAAAAABAAMAAQAFAAAAAAABAAIAAQAFAAAAAAACAAIAAQAFAAAAAAADAAIAAQAFAAAAAAADAAEAAQAFAAAAAAACAAEAAQAFAAAAAAABAAEAAQAFAAAAAAAAAAEAAQAFAAAAAAD//wEAAQAFAAAAAAD+/wEAAQAFAAAAAAD8/wEAAQAFAAAAAAD7/wEAAQAFAAAAAAD6/wEAAQAHAAAAAAD+/+z/AQAPAAAAAAD//+z/AQAJAAAAAAAAAOz/AQAJAAAAAAABAOz/AQAOAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAQALAAAAAAAAAAAAAQALAAAAAAD+/wAAAQALAAAAAAABAAAAAQACAAAAAAD8/wIAAQAHAAAAAAD8/wMAAQAHAAAAAAD9/wMAAQAFAAAAAAD+/wMAAQAFAAAAAAD//wIAAQAFAAAAAAAAAAIAAQAFAAAAAAD8/wQAAQAEAAAAAAD9/wQAAQAKAAAAAAD+/wQAAQAKAAAAAAD//wQAAQAKAAAAAAAAAAQAAQAKAAAAAAABAAQAAQADAAAAAAD8/wAAAQABAAAAAAD9/wAAAQALAAAAAAD9/wEAAQAFAAAAAAD9/wIAAQAFAAAAAAD+/wIAAQAFAAAAAAD//wMAAQAFAAAAAAAAAAMAAQAFAAAAAAABAAMAAQAIAAAAAAABAAIAAQAIAAAAAAABAAEAAQAIAAAAAAAAAAEAAQAFAAAAAAD//wEAAQAFAAAAAAD+/wEAAQAFAAAAAAD8/wEAAQAHAAAAAAD6//v/AQAOAAAAAAD5//r/AQAMAAAAAAD5//v/AQAEAAAAAAACAPj/AQAPAAAAAAADAPf/AQAMAAAAAAADAPj/AQADAAAAAAD5//X/AQAJAAAAAAD6//X/AQAOAAAAAAD4//X/AQAPAAAAAAABAPP/AQAPAAAAAAACAPP/AQAOAAAAAAD+/+z/AQANAAAAAAD+/+r/AQABAAAAAAD+/+v/AQAGAAAAAAD//+r/AQAJAAAAAAAAAOr/AQAJAAAAAAAAAO7/AQAPAAAAAAABAOr/AQAOAAAAAAABAO7/AQAJAAAAAAACAO7/AQAJAAAAAAADAOr/AQAAAAAAAAADAO7/AQAOAAAAAAAFAOz/AQAAAAAAAAD7/+//AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_c5pm5")
 
 [node name="MovablePlatform" type="StaticBody2D" parent="." unique_id=2022527099]
@@ -227,7 +227,7 @@ layout_mode = 2
 text = "[E] Edit mode [OFF] |"
 label_settings = SubResource("LabelSettings_lu7p2")
 script = ExtResource("6_21pen")
-world_manager = NodePath("")
+world_manager = NodePath("../../../../../..")
 metadata/_custom_type_script = "uid://daauspnibavlh"
 
 [node name="Reset" type="Label" parent="CanvasLayer2/MarginContainer/Control/ColorRect/HBoxContainer" unique_id=126753955]
@@ -242,7 +242,7 @@ layout_mode = 2
 text = " Edits left |"
 label_settings = SubResource("LabelSettings_lu7p2")
 script = ExtResource("8_8nh4m")
-world_manager = NodePath("")
+world_manager = NodePath("../../../../../..")
 metadata/_custom_type_script = "uid://daauspnibavlh"
 
 [node name="Sprint" type="Label" parent="CanvasLayer2/MarginContainer/Control/ColorRect/HBoxContainer" unique_id=1081443784 node_paths=PackedStringArray("player")]
@@ -250,7 +250,7 @@ layout_mode = 2
 text = "[Shift] Dash | Time left to Dash: "
 label_settings = SubResource("LabelSettings_lu7p2")
 script = ExtResource("9_mbjxg")
-player = NodePath("")
+player = NodePath("../../../../../../CharacterBody2D")
 metadata/_custom_type_script = "uid://daauspnibavlh"
 
 [node name="Dialog" type="Label" parent="CanvasLayer2/MarginContainer/Control" unique_id=2051690483]
@@ -265,7 +265,7 @@ use_underscore = false
 metadata/_custom_type_script = "uid://cbha3qbu51hsx"
 
 [node name="Flag" type="Area2D" parent="." unique_id=2030281080]
-position = Vector2(1, -656)
+position = Vector2(-2, -721)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("11_vqura")
@@ -295,7 +295,7 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("15_exrbr")
-world_manager = NodePath("")
+world_manager = NodePath("..")
 
 [node name="Plus" type="CPUParticles2D" parent="AddEdit" unique_id=165437539]
 texture = ExtResource("16_m1vss")
@@ -345,13 +345,223 @@ color_ramp = SubResource("Gradient_xeug5")
 [node name="SafeZone" type="Area2D" parent="." unique_id=982404271 node_paths=PackedStringArray("world_manager")]
 position = Vector2(-182, -182)
 script = ExtResource("19_p135u")
-world_manager = NodePath("")
+world_manager = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZone" unique_id=63085283]
 position = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_45onm")
 
 [node name="ColorRect" type="ColorRect" parent="SafeZone" unique_id=1428874846]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 22.0
+offset_bottom = 22.0
+color = Color(0, 1, 0.13333344, 0.20784314)
+
+[node name="AddEdit2" type="Area2D" parent="." unique_id=1739263572 node_paths=PackedStringArray("world_manager")]
+position = Vector2(83, -268)
+scale = Vector2(0.5, 0.5)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("15_exrbr")
+world_manager = NodePath("..")
+add_amount = 10
+
+[node name="Plus" type="CPUParticles2D" parent="AddEdit2" unique_id=1828376469]
+texture = ExtResource("16_m1vss")
+direction = Vector2(0, -1)
+spread = 35.64
+gravity = Vector2(0, -91.875)
+initial_velocity_min = 30.0
+initial_velocity_max = 35.0
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+scale_amount_curve = SubResource("Curve_ro2ob")
+color_ramp = SubResource("Gradient_j1ord")
+
+[node name="Sprite2D" type="Sprite2D" parent="AddEdit2" unique_id=100093880]
+texture = ExtResource("17_e11wx")
+
+[node name="Label" type="Label" parent="AddEdit2" unique_id=947958562]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_q3mdf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AddEdit2" unique_id=1455867402]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_2oy1r")
+
+[node name="Smoke" type="CPUParticles2D" parent="AddEdit2" unique_id=651939668]
+emitting = false
+texture = ExtResource("18_7ew25")
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.93
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(-1, 0)
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_max = 720.0
+linear_accel_min = 3.96
+linear_accel_max = 63.37
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_6yjhk")
+color_ramp = SubResource("Gradient_xeug5")
+
+[node name="SafeZone2" type="Area2D" parent="." unique_id=1996611849 node_paths=PackedStringArray("world_manager")]
+position = Vector2(74, -278)
+script = ExtResource("19_p135u")
+world_manager = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZone2" unique_id=866016134]
+position = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_45onm")
+
+[node name="ColorRect" type="ColorRect" parent="SafeZone2" unique_id=2059751227]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 22.0
+offset_bottom = 22.0
+color = Color(0, 1, 0.13333344, 0.20784314)
+
+[node name="AddEdit3" type="Area2D" parent="." unique_id=1139791152 node_paths=PackedStringArray("world_manager")]
+position = Vector2(-207, -364)
+scale = Vector2(0.5, 0.5)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("15_exrbr")
+world_manager = NodePath("..")
+add_amount = 10
+
+[node name="Plus" type="CPUParticles2D" parent="AddEdit3" unique_id=669028890]
+texture = ExtResource("16_m1vss")
+direction = Vector2(0, -1)
+spread = 35.64
+gravity = Vector2(0, -91.875)
+initial_velocity_min = 30.0
+initial_velocity_max = 35.0
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+scale_amount_curve = SubResource("Curve_ro2ob")
+color_ramp = SubResource("Gradient_j1ord")
+
+[node name="Sprite2D" type="Sprite2D" parent="AddEdit3" unique_id=1709389502]
+texture = ExtResource("17_e11wx")
+
+[node name="Label" type="Label" parent="AddEdit3" unique_id=345057445]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_q3mdf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AddEdit3" unique_id=1028849295]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_2oy1r")
+
+[node name="Smoke" type="CPUParticles2D" parent="AddEdit3" unique_id=240663481]
+emitting = false
+texture = ExtResource("18_7ew25")
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.93
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(-1, 0)
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_max = 720.0
+linear_accel_min = 3.96
+linear_accel_max = 63.37
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_6yjhk")
+color_ramp = SubResource("Gradient_xeug5")
+
+[node name="SafeZone3" type="Area2D" parent="." unique_id=1827079847 node_paths=PackedStringArray("world_manager")]
+position = Vector2(-216, -374)
+script = ExtResource("19_p135u")
+world_manager = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZone3" unique_id=363880825]
+position = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_45onm")
+
+[node name="ColorRect" type="ColorRect" parent="SafeZone3" unique_id=2108022296]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 22.0
+offset_bottom = 22.0
+color = Color(0, 1, 0.13333344, 0.20784314)
+
+[node name="AddEdit4" type="Area2D" parent="." unique_id=1249443782 node_paths=PackedStringArray("world_manager")]
+position = Vector2(67, -428)
+scale = Vector2(0.5, 0.5)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("15_exrbr")
+world_manager = NodePath("..")
+add_amount = 10
+
+[node name="Plus" type="CPUParticles2D" parent="AddEdit4" unique_id=319350611]
+texture = ExtResource("16_m1vss")
+direction = Vector2(0, -1)
+spread = 35.64
+gravity = Vector2(0, -91.875)
+initial_velocity_min = 30.0
+initial_velocity_max = 35.0
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+scale_amount_curve = SubResource("Curve_ro2ob")
+color_ramp = SubResource("Gradient_j1ord")
+
+[node name="Sprite2D" type="Sprite2D" parent="AddEdit4" unique_id=497026344]
+texture = ExtResource("17_e11wx")
+
+[node name="Label" type="Label" parent="AddEdit4" unique_id=30917224]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_q3mdf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AddEdit4" unique_id=953107073]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_2oy1r")
+
+[node name="Smoke" type="CPUParticles2D" parent="AddEdit4" unique_id=1849676337]
+emitting = false
+texture = ExtResource("18_7ew25")
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.93
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(-1, 0)
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_max = 720.0
+linear_accel_min = 3.96
+linear_accel_max = 63.37
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_6yjhk")
+color_ramp = SubResource("Gradient_xeug5")
+
+[node name="SafeZone4" type="Area2D" parent="." unique_id=1193208073 node_paths=PackedStringArray("world_manager")]
+position = Vector2(58, -438)
+script = ExtResource("19_p135u")
+world_manager = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZone4" unique_id=151527914]
+position = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_45onm")
+
+[node name="ColorRect" type="ColorRect" parent="SafeZone4" unique_id=1763364925]
 offset_left = -10.0
 offset_top = -10.0
 offset_right = 22.0
