@@ -3,11 +3,17 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gtvr4rtdh7ww"
-valid=false
+path.s3tc="res://.godot/imported/sparse_grass_disp_8k.png-9572c99d12ed817d03d5e8fa28222f07.s3tc.ctex"
+path.etc2="res://.godot/imported/sparse_grass_disp_8k.png-9572c99d12ed817d03d5e8fa28222f07.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
 
 [deps]
 
 source_file="res://assets/textures/Sparse Grass/8k/textures/sparse_grass_disp_8k.png"
+dest_files=["res://.godot/imported/sparse_grass_disp_8k.png-9572c99d12ed817d03d5e8fa28222f07.s3tc.ctex", "res://.godot/imported/sparse_grass_disp_8k.png-9572c99d12ed817d03d5e8fa28222f07.etc2.ctex"]
 
 [params]
 

@@ -128,6 +128,7 @@ script = ExtResource("1_h5gya")
 dialog = NodePath("CanvasLayer2/MarginContainer/Control/Dialog")
 flag = NodePath("Flag")
 death_zone = NodePath("DeathZone")
+next_scene_path = "res://Credits/Credits.tscn"
 level_index = 3
 metadata/_custom_type_script = "uid://ciaupfkwwy37h"
 

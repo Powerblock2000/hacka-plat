@@ -7,7 +7,7 @@ var levels : Array[int] = [
 		2,
 		3,
 ]
-var finished_levels : Array[int]
+var finished_levels : Array[int] = [1]
 
 @onready var save : ConfigFile = ConfigFile.new()
 

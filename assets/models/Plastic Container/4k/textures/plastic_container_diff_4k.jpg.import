@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://coqgveqspyg85"
 path.s3tc="res://.godot/imported/plastic_container_diff_4k.jpg-3c8d111cb4013f292d3180d69364d1ba.s3tc.ctex"
+path.etc2="res://.godot/imported/plastic_container_diff_4k.jpg-3c8d111cb4013f292d3180d69364d1ba.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/Plastic Container/4k/textures/plastic_container_diff_4k.jpg"
-dest_files=["res://.godot/imported/plastic_container_diff_4k.jpg-3c8d111cb4013f292d3180d69364d1ba.s3tc.ctex"]
+dest_files=["res://.godot/imported/plastic_container_diff_4k.jpg-3c8d111cb4013f292d3180d69364d1ba.s3tc.ctex", "res://.godot/imported/plastic_container_diff_4k.jpg-3c8d111cb4013f292d3180d69364d1ba.etc2.ctex"]
 
 [params]
 

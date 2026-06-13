@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://beqm68m7tyigb" path="res://Menus/level_select.gd" id="1_cbjk5"]
 [ext_resource type="Script" uid="uid://cylfwjxkyrb1r" path="res://TextItems/TextMenu.gd" id="2_b6uew"]
-[ext_resource type="FontFile" uid="uid://dyxok0fufmow3" path="res://Fonts/CascadiaMono.ttf" id="2_rd7hm"]
+[ext_resource type="FontVariation" uid="uid://s111is7mhq73" path="res://cascadia_with_emojis.tres" id="2_rd7hm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ids4p"]
 font = ExtResource("2_rd7hm")

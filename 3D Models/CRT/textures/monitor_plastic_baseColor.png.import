@@ -3,11 +3,17 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xvan4jd3k45o"
-valid=false
+path.s3tc="res://.godot/imported/monitor_plastic_baseColor.png-577ef0e8c2ea41d743f6c85fbbe89cbe.s3tc.ctex"
+path.etc2="res://.godot/imported/monitor_plastic_baseColor.png-577ef0e8c2ea41d743f6c85fbbe89cbe.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
 
 [deps]
 
 source_file="res://3D Models/CRT/textures/monitor_plastic_baseColor.png"
+dest_files=["res://.godot/imported/monitor_plastic_baseColor.png-577ef0e8c2ea41d743f6c85fbbe89cbe.s3tc.ctex", "res://.godot/imported/monitor_plastic_baseColor.png-577ef0e8c2ea41d743f6c85fbbe89cbe.etc2.ctex"]
 
 [params]
 

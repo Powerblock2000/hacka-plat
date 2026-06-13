@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://ksb8xllf6xue"]
+
+[ext_resource type="FontVariation" uid="uid://s111is7mhq73" path="res://cascadia_with_emojis.tres" id="1_s87c2"]
+
+[resource]
+Label/fonts/font = ExtResource("1_s87c2")

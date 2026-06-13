@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3 uid="uid://s111is7mhq73"]
+
+[ext_resource type="FontFile" uid="uid://dyxok0fufmow3" path="res://Fonts/CascadiaMono.ttf" id="1_odlj2"]
+[ext_resource type="FontFile" uid="uid://dor1o5mkkdvxw" path="res://Fonts/NotoEmoji-VariableFont_wght.ttf" id="2_om36e"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_om36e")])
+base_font = ExtResource("1_odlj2")

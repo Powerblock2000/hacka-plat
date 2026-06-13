@@ -3,15 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dw8ewdjtwrmen"
-valid=false
+path.s3tc="res://.godot/imported/whitePuff01.png-4dc0edd46af577d1f878e1c0a1209c27.s3tc.ctex"
+path.etc2="res://.godot/imported/whitePuff01.png-4dc0edd46af577d1f878e1c0a1209c27.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
 
 [deps]
 
 source_file="res://White puff/whitePuff01.png"
+dest_files=["res://.godot/imported/whitePuff01.png-4dc0edd46af577d1f878e1c0a1209c27.s3tc.ctex", "res://.godot/imported/whitePuff01.png-4dc0edd46af577d1f878e1c0a1209c27.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

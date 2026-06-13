@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5jf6mcmtvs7x"
-path="res://.godot/imported/PlusEdit.png-76f42ebded3b1742176c78a7c08632ee.ctex"
+path.s3tc="res://.godot/imported/PlusEdit.png-76f42ebded3b1742176c78a7c08632ee.s3tc.ctex"
+path.etc2="res://.godot/imported/PlusEdit.png-76f42ebded3b1742176c78a7c08632ee.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/PlusEdit.png"
-dest_files=["res://.godot/imported/PlusEdit.png-76f42ebded3b1742176c78a7c08632ee.ctex"]
+dest_files=["res://.godot/imported/PlusEdit.png-76f42ebded3b1742176c78a7c08632ee.s3tc.ctex", "res://.godot/imported/PlusEdit.png-76f42ebded3b1742176c78a7c08632ee.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -48,6 +48,18 @@ func say_dialog_defered(text_to_say: String) -> void:
 func _ready() -> void:
 	start()
 
+func load_mp3_web_safe(path: String) -> AudioStreamMP3:
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file:
+		var bytes = file.get_buffer(file.get_length())
+		file.close()
+		var mp3_stream = AudioStreamMP3.new()
+		mp3_stream.data = bytes
+		return mp3_stream
+	else:
+		print("Failed to open audio file at: ", path)
+		return null
+
 func start() -> void:
 	player = get_player()
 	print("Player: %s" % player)
@@ -56,7 +68,7 @@ func start() -> void:
 	
 	var audio : AudioStreamPlayer = AudioStreamPlayer.new()
 	add_child(audio)
-	audio.stream = AudioStreamMP3.load_from_file("res://Audio/melodyayresgriffiths-rasputin-russia-tetris-game-cossack-puzzle-soundtrack-mystery-148250.mp3")
+	audio.stream = load_mp3_web_safe("res://Audio/melodyayresgriffiths-rasputin-russia-tetris-game-cossack-puzzle-soundtrack-mystery-148250.mp3")
 	audio.volume_db = -15
 	audio.playing = true
 	music = audio
@@ -78,7 +90,7 @@ func win_level_deffered() -> void:
 	
 	var audio_win : AudioStreamPlayer = AudioStreamPlayer.new()
 	add_child(audio_win)
-	audio_win.stream = AudioStreamMP3.load_from_file("res://Audio/eaglaxle-gaming-victory-464016.mp3")
+	audio_win.stream = load_mp3_web_safe("res://Audio/eaglaxle-gaming-victory-464016.mp3")
 	audio_win.playing = true
 	can_move = false
 	await get_tree().create_timer(2).timeout

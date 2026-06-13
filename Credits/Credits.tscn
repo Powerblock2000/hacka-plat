@@ -167,7 +167,7 @@ shader_parameter/glow_threshold = 0.65
 
 [sub_resource type="Animation" id="Animation_at4p1"]
 resource_name = "And Thats a Wrap ;)"
-length = 373.56669999999997
+length = 373.5667
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -322,7 +322,7 @@ tracks/13/keys = {
 "times": PackedFloat32Array(42.500004, 297.66666),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(2.09, -3.496, 0.042), Vector3(2.09, 9.168, 0.042)]
+"values": [Vector3(2.09, -4.411, 0.042), Vector3(2.09, 9.168, 0.042)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -343,7 +343,7 @@ tracks/15/path = NodePath(".")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(373.56668),
+"times": PackedFloat32Array(373.53333),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -569,7 +569,12 @@ Some music by Vlad Krotov | Pixabay
 
 Some Sound Effects by EAGLAXLE | Pixabay
 
-Some Sound Effects by Nicholas Judy | Pixabay"
+
+Some Sound Effects by Nicholas Judy | Pixabay
+
+CRT monitor: \"CRT Computer Monitor\" (https://skfb.ly/o9BvF) by fizyman is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+Some assets from Poly Haven (CC0)"
 font = ExtResource("13_vn4un")
 font_size = 19
 autowrap_mode = 1
